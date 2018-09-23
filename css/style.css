@@ -1,0 +1,19 @@
+article {
+    margin: 40px 20%;
+}
+
+.scroll-button{
+    background-color: blue;
+    border-radius: 2px;
+    padding: 7px 18px;
+    color: white;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
