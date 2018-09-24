@@ -1,23 +1,28 @@
 (function(){
     
     const addClass = (element, cssClass) => element.classList.add(cssClass);
-    const addText = (element, inputText) => element.textContent = inputText;
-    const createEl = (element) => document.createElement(element);
-    const render = (place, element) => `document.${JSON.parse(place)}.appendChild(${element})`;
+    const addInput = (element, inputText) => element.textContent = inputText;
+    const createElement = element => document.createElement(element);
+    const renderElement =  element => document.body.appendChild(element);
+    const showElement = element => element.classList.remove("hidden");
+    const hideElement = element => element.classList.add("hidden");
+    const scrollToHeight = height => document.documentElement.scrollTop = height;
         
-    const createElement = (elementType, initialClass, elementText) => {
+
+    const buildElement = (elementType, initialClass, elementText) => {
         
-        const element = createEl(elementType);
+        const element = createElement(elementType);
         addClass(element, initialClass);
-        addText(element, elementText);
+        addInput(element, elementText);
         hideElement(element);
-        render(body, element);
-
+        renderElement(element);
+        
         return element;
-
     }
 
+
     const buttonVisibility = (activationHeight, element) => {
+
         const heightFromTop = document.documentElement.scrollTop;
 
         if(heightFromTop >= activationHeight){
@@ -26,19 +31,15 @@
             hideElement(element);
         }
     }
-
-    const showElement = element => element.classList.remove("hidden");
-
-    const hideElement = element => element.classList.add("hidden");
     
 
-    const button = createElement("button", "scroll-button", "Scroll Up" );
+    const button = buildElement("button", "scroll-button", "Scroll Up" );
+    
+    // const redButton = buildElement("button", "left-button", "Amigo");
 
-    button.addEventListener("click", e => {
-        document.documentElement.scrollTop = 0;
-    })
 
-    window.addEventListener("scroll", e => {
-        buttonVisibility(100, button);
-    },false)
+    button.addEventListener("click", e => scrollTop(0));
+    window.addEventListener("scroll", e => buttonVisibility(100, button), false);
+
+
 })();
