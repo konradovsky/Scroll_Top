@@ -1,21 +1,24 @@
 (function(){
     
-    function createElement(elementType, initialClass, elementText){
-
-        element = elementType;
-        var element = document.createElement(element);
-        element.classList.add(initialClass);
-        element.textContent = elementText;
-
+    const addClass = (element, cssClass) => element.classList.add(cssClass);
+    const addText = (element, inputText) => element.textContent = inputText;
+    const createEl = (element) => document.createElement(element);
+    const render = (place, element) => `document.${JSON.parse(place)}.appendChild(${element})`;
+        
+    const createElement = (elementType, initialClass, elementText) => {
+        
+        const element = createEl(elementType);
+        addClass(element, initialClass);
+        addText(element, elementText);
         hideElement(element);
-        document.body.appendChild(element);
+        render(body, element);
 
         return element;
 
     }
 
-    function buttonVisibility(activationHeight, element){
-        var heightFromTop = document.documentElement.scrollTop;
+    const buttonVisibility = (activationHeight, element) => {
+        const heightFromTop = document.documentElement.scrollTop;
 
         if(heightFromTop >= activationHeight){
             showElement(element);
@@ -24,21 +27,18 @@
         }
     }
 
-    function showElement(element){
-        element.classList.remove("hidden");
-    }
+    const showElement = element => element.classList.remove("hidden");
 
-    function hideElement(element){
-        element.classList.add("hidden");
-    }
+    const hideElement = element => element.classList.add("hidden");
     
-    var button = createElement("button", "scroll-button", "Scroll UPP" );
 
-    button.addEventListener("click", (e) => {
-        console.log("Click");
+    const button = createElement("button", "scroll-button", "Scroll Up" );
+
+    button.addEventListener("click", e => {
+        document.documentElement.scrollTop = 0;
     })
 
-    window.addEventListener("scroll", function(e){
+    window.addEventListener("scroll", e => {
         buttonVisibility(100, button);
     },false)
 })();
