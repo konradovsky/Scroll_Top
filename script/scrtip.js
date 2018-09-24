@@ -35,8 +35,6 @@
 
     const button = buildElement("button", "scroll-button", "Scroll Up" );
 
-    // const redButton = buildElement("button", "left-button", "Amigo");
-
 
     button.addEventListener("click", e => scrollToHeight(0));
     window.addEventListener("scroll", e => buttonVisibility(100, button), false);
