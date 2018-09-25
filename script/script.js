@@ -1,6 +1,7 @@
+import * as create from './createElement';
+
 (function(){
     
-    const create = require("./createElement");
         
     const buildElement = (elementType, initialClass, elementText) => {
         
@@ -27,7 +28,7 @@
     const button = buildElement("button", "scroll-button", "Scroll Up" );
 
     button.addEventListener("click", e => create.scrollToHeight(0));
-    window.addEventListener("scroll", e => create.buttonVisibility(100, button), false);
+    window.addEventListener("scroll", e => buttonVisibility(100, button), false);
 
 
 })();

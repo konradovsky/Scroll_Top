@@ -4,12 +4,14 @@ const createElement = element => document.createElement(element);
 const renderElement =  element => document.body.appendChild(element);
 const showElement = element => element.classList.remove("hidden");
 const hideElement = element => element.classList.add("hidden");
+const scrollToHeight = height => document.documentElement.scrollTop = height;
 
-module.exports = {
+export {
     addClass,
     addInput,
     createElement,
     renderElement,
     showElement,
-    hideElement
+    hideElement,
+    scrollToHeight
 }
