@@ -13,13 +13,9 @@ const hideElement = element => element.classList.add("hidden");
 // Animation for scroll
 const animateScroll = (height,speed) => {
     const animation = setInterval(() => {
-        if(document.documentElement.scrollTop > height){
-            document.documentElement.scrollTop -= speed;
-        } else if(document.documentElement.scrollTop <= 0){
-            clearInterval(animation);
-        }
+        const heightFromTop = document.documentElement.scrollTop;
+        (heightFromTop > height) ? document.documentElement.scrollTop -= speed : clearInterval(animation)
     }, 1);
-    
 }
 
 const buttonVisibility = (activationHeight, element) => {
