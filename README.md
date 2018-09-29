@@ -13,9 +13,9 @@ class, placeholder, activation height and of course the animation speed.
 Used types can be found below, make sure to obey them! 
 ``` 
 buildElement(
-HTML tag: *string*,
-added class: *string*, 
-text: *string*, 
-height: *number*
-speed: *number*
+HTML tag: string,
+added class: string, 
+text: string, 
+height: number,
+speed: number
 ``` 
