@@ -11,14 +11,23 @@ const showElement = element => element.classList.remove("hidden");
 const hideElement = element => element.classList.add("hidden");
     
 // Animation for scroll
-const scrollToHeight = height => document.documentElement.scrollTop = height;
+const animateScroll = (height,speed) => {
+    const animation = setInterval(() => {
+        if(document.documentElement.scrollTop > height){
+            document.documentElement.scrollTop -= speed;
+        } else if(document.documentElement.scrollTop <= 0){
+            clearInterval(animation);
+        }
+    }, 1);
+    
+}
 
 const buttonVisibility = (activationHeight, element) => {
     const heightFromTop = document.documentElement.scrollTop;
     (heightFromTop >= activationHeight) ? showElement(element) : hideElement(element);
 }
 
-const buildElement = (elementType, initialClass, elementText, activation) => {
+const buildElement = (elementType, initialClass, elementText, activation, speed) => {
     const element = createElement(elementType);
 
     addClass(element, initialClass);
@@ -26,13 +35,10 @@ const buildElement = (elementType, initialClass, elementText, activation) => {
     hideElement(element);
     renderElement(element);
 
-    element.addEventListener("click", () => scrollToHeight(0));
+    element.addEventListener("click", () => animateScroll(0, speed));
     window.addEventListener("scroll", () => buttonVisibility(activation, element));
 
     return element;
 }
 
-
-
 export default buildElement;
-
