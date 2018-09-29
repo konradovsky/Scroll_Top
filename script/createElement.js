@@ -1,12 +1,19 @@
 const createElementTools = {
+
+    // Adding content and styles
     addClass:(element, cssClass) => element.classList.add(cssClass),
     addInput:(element, inputText) => element.textContent = inputText,
+
+    // Create and render item
     createElement: element => document.createElement(element),
     renderElement: element => document.body.appendChild(element),
+
+    // Visibility
     showElement: element => element.classList.remove("hidden"),
     hideElement: element => element.classList.add("hidden"),
-    scrollToHeight: height => document.documentElement.scrollTop = height
 
+    // Animation
+    scrollToHeight: height => document.documentElement.scrollTop = height
 }
 
 const buildElement = (elementType, initialClass, elementText, activation) => {
@@ -24,7 +31,6 @@ const buildElement = (elementType, initialClass, elementText, activation) => {
 
 const buttonVisibility = (activationHeight, element) => {
     const heightFromTop = document.documentElement.scrollTop;
-
     if(heightFromTop >= activationHeight){
         createElementTools.showElement(element);
     } else {
