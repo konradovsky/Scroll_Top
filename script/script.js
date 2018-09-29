@@ -8,7 +8,6 @@ import buildElement from './createElement';
     //    text: string, 
     //    height: number
     // )
-
     const button = buildElement("button", "scroll-button", "Scroll Up", 100 );
 
 })();
