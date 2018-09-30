@@ -5,6 +5,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const config = {
   entry: './script/script.js',
   watch: true,
+  mode: 'production',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
