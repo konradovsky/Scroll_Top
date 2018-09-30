@@ -1,0 +1,31 @@
+{
+  "name": "scrollovsky",
+  "version": "1.0.5",
+  "description": "A simple scroll top function",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server",
+    "build": "webpack -d --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/konradovsky/Scroll_Top.git"
+  },
+  "author": "Konrad Barrek <konrad.trade@gmail.com> (https://github.com/konradovsky)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/konradovsky/Scroll_Top/issues"
+  },
+  "homepage": "https://github.com/konradovsky/Scroll_Top#readme",
+  "devDependencies": {
+    "css-loader": "^1.0.0",
+    "lite-server": "^2.4.0",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1"
+  }
+}
