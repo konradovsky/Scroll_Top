@@ -1,6 +1,6 @@
 {
   "name": "scrollovsky",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A simple scroll top function",
   "main": "index.html",
   "scripts": {
