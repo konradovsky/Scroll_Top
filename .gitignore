@@ -4,3 +4,5 @@
 /package.json
 /webpack.config.js
 /script
+
+css/\.DS_Store
