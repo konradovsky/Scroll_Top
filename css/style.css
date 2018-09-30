@@ -27,6 +27,10 @@ article {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
+.hidden {
+    animation: hideButton .3s forwards;
+}
+
 @keyframes animateButton {
     0% {
         opacity: 0;
@@ -36,6 +40,11 @@ article {
     }
 }
 
-.hidden {
-    display: none;
+@keyframes hideButton {
+    0% {
+        opacity: 1;
+    } 
+    100% {
+        opacity: 0;
+    }
 }
