@@ -2,7 +2,7 @@
   "name": "scroll_top",
   "version": "1.0.0",
   "description": "A simple scroll top function",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "lite-server",
@@ -18,7 +18,7 @@
     "url": "https://github.com/konradovsky/Scroll_Top/issues"
   },
   "homepage": "https://github.com/konradovsky/Scroll_Top#readme",
-  "devDependencies": {
+  "dependencies": {
     "css-loader": "^1.0.0",
     "lite-server": "^2.4.0",
     "node-sass": "^4.9.3",
