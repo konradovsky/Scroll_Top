@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "lite-server",
-    "build": "webpack -d --mode development"
+    "build": "webpack -d --mode production"
   },
   "repository": {
     "type": "git",
