@@ -20,7 +20,7 @@ article {
     cursor: pointer;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    animation: animateButton .3s forwards;
+    animation: showButton .3s forwards;
 }
 
 .scroll-button:hover{
@@ -31,7 +31,7 @@ article {
     animation: hideButton .3s forwards;
 }
 
-@keyframes animateButton {
+@keyframes showButton {
     0% {
         opacity: 0;
     } 
