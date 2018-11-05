@@ -1,9 +1,17 @@
+body{
+    background: linear-gradient(#888,#333);
+    color: white;
+}
 :focus {
     outline: 0;
 }
 
 article {
     margin: 40px 35%;
+}
+
+.height{
+    height:150vh;
 }
 
 .scroll-button{
